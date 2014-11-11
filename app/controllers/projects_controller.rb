@@ -12,4 +12,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def total_worked(m,y,name)
+    p = Project.find_by name: name
+    p.total_hours_in_month(m, y)
+  end
+
 end
