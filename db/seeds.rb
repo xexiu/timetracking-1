@@ -7,10 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 12.times do |index|
-  Project.create name: "Project #{index + 1}", description: "Description for project #{index + 1}"
+  project = Project.create name: "Project #{index + 1}", description: "Description for project #{index + 1}"
+    Entry.create hours: index + 1, minutes: index + 1, project_id: project.id
 end
 
-project = Project.create name: "Project 13"
-
-Entry.create hours: 0, minutes: 45, project_id: project.id
-Entry.create hours: 3, minutes: 32, project_id: project.id
