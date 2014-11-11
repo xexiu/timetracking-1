@@ -5,10 +5,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    unless @project = Project.find_by(id: params[:id])
-    #        = /pojects/:id
+    unless @project = Project.friendly.find(params[:id])
     render 'no_projects_found'
-    # /no_projects_found.html.erb
     end
   end
 
