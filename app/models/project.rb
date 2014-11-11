@@ -13,6 +13,9 @@ class Project < ActiveRecord::Base
       minutes += entry.minutes
     end
     hours + (minutes / 60)
+    # Project.first.entries.map |entry| {
+    # entry.hours + entry.minutes / 60
+    # }.sum.to_i
   end
 
 end
