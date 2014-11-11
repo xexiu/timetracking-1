@@ -10,4 +10,7 @@
   Project.create name: "Project #{index + 1}", description: "Description for project #{index + 1}"
 end
 
-Project.create name: "Project 13"
+project = Project.create name: "Project 13"
+
+Entry.create hours: 0, minutes: 45, project_id: project.id
+Entry.create hours: 3, minutes: 32, project_id: project.id
