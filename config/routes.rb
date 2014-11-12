@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :entries
   end
 
+  namespace :admin do
+    resouce :posts
+  end
+
   # get '/contact' => 'site#contact'
   # get '/projects' => 'projects#index'
   # get '/projects/:id' => 'projects#show'
