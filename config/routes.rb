@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
 
   get '/' => 'site#home'
-  resource :projects do
+  resources :projects do
     resources :entries
   end
 
