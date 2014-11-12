@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
   has_many :entries
+  validates :name, presence: true, uniqueness: true,length: { maximum: 30 }, format: {with: /\A[\w\s*]+\z/}
+  # must have: name, description, be present, unique (title)
+  # cant be: 'ironhack', 'ironhack' ==> false
 
     extend FriendlyId
     friendly_id :name, use: :slugged
