@@ -9,11 +9,13 @@
 u = User.create(email: 'test@example', password: '123456789')
 
 12.times do |index|
-  project = Project.create name: "Project #{index + 1}",
-  description: "Description for project #{index + 1}"
-  user_id: u.id
+  project = Project.create(
+    name: "Project #{index + 1}",
+    description: "Description for project #{index + 1}",
+    user_id: u.id
+    )
 
-  Entry.create hours: index + 1, minutes: index + 1, date: Date.today, project_id: project.id
+    Entry.create hours: index + 1, minutes: index + 1, date: Date.today, project_id: project.id
 end
 
 
