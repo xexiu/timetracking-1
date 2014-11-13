@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @project = Project.friendly.find params[:project_id]
     @entries = @project.entries
