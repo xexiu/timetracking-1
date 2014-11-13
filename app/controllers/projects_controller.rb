@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    unless @project = Project.friendly.find(params[:id])
+    unless @project = current_user.projects.friendly.find(params[:id])
     render 'no_projects_found'
     end
   end
