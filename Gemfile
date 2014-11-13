@@ -6,6 +6,7 @@ gem 'rails', '4.1.0'
 gem 'friendly_id', '~> 5.0.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 # Use postgresql as the database for Active Record
 gem 'pg'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

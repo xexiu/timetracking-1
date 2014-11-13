@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :users
 
-  get '/' => 'site#home'
+  root to: 'site#home'
   resources :projects do
     resources :entries
   end
 
   # namespace :admin do
-  #   resouce :posts
+  #   resouces :posts
   # end
 
   # get '/contact' => 'site#contact'
