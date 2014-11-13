@@ -1,0 +1,13 @@
+<h1>
+  <%= @project.name %>
+</h1>
+<ul><%= @entry.id %>
+  <li>
+    <%= @entry.hours %>
+    <%= @entry.minutes %>
+    <%= @entry.date %>
+  </li>
+</ul>
+
+<%= link_to('project', projects_path) %>
+<%= link_to('new entry', new_project_entry_path(@project)) %>
