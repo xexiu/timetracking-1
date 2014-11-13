@@ -20,6 +20,7 @@ class EntriesController < ApplicationController
 
     if @entry.save
       flash[:notice] = "Project created successfully"
+      UserMailer.entry_created(@project).deliver
       redirect_to project_entries_path(@project)
     else
       render 'new'
