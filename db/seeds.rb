@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = User.create(email: 'test@example', password: '123456789')
+u = User.create(email: 'test@example.com', password: '123456789')
 
 12.times do |index|
   project = Project.create(
