@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   private
 
   def project
-    @project ||= current_user.projects.friendly.find_by id: params[:id]
+    @project ||= current_user.projects.find_by id: params[:id]
   end
 
 end

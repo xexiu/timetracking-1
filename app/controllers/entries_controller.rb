@@ -5,17 +5,17 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.find params[:id]
   end
 
   def new
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.new
   end
 
   def create
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.new entry_params
 
     if @entry.save
@@ -28,12 +28,12 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.find params[:id]
   end
 
   def update
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.find params[:id]
 
     if @entry.update_attributes entry_params
@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @project = current_user.projects.friendly.find params[:project_id]
+    @project = current_user.projects.find params[:project_id]
     @entry = @project.entries.find params[:id]
 
     if @entry.destroy
@@ -60,7 +60,7 @@ class EntriesController < ApplicationController
   end
 
   def project
-    @project ||= current_user.projects.friendly.find params[:project_id]
+    @project ||= current_user.projects.find params[:project_id]
   end
 
 end
