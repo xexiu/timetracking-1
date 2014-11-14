@@ -8,7 +8,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   private
-  # This would need to permit
+  # This would need to permit user, group, etc.
   def project_params
     params.require(:project).permit(:name)
   end
