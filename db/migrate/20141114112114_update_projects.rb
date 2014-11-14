@@ -3,7 +3,7 @@ class UpdateProjects < ActiveRecord::Migration
     add_column :projects, :group_id, :integer
 
     Project.find_each do |project|
-      membership = User.where(user_id: project.user.id)
+      membership = Membership.where(user_id: project.user_id).first
       project.group_id = membership.group_id
       project.save
     end

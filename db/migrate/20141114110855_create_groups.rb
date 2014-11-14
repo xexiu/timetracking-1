@@ -6,7 +6,7 @@ class CreateGroups < ActiveRecord::Migration
     end
 
     User.find_each do |user|
-      group = group.create(name: "Group for user #{user_id}")
+      group = Group.create(name: "Group for user #{user.id}")
       Membership.create(group: group, user: user)
     end
   end
