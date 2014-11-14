@@ -1,8 +1,7 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @project = current_user.projects.friendly.find params[:project_id]
-    @entries = @project.entries
+    @entries = project.entries
   end
 
   def show
@@ -58,6 +57,10 @@ class EntriesController < ApplicationController
   private
   def entry_params
     params.require(:entry).permit(:hours, :minutes, :date)
+  end
+
+  def project
+    @project ||= current_user.projects.friendly.find params[:project_id]
   end
 
 end
