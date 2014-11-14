@@ -5,7 +5,6 @@ module ApplicationHelper
     end.join.html_safe
   end
 
-
   private
 
   def message_div(type , message)
