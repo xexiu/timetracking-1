@@ -13,7 +13,6 @@ class ProjectsController < ApplicationController
   # end
 
   private
-
   def project
     @project ||= current_user.projects.find_by id: params[:id]
   end
