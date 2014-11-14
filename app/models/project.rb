@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :group
   has_many :entries
   validates :name, presence: true, uniqueness: true,length: { maximum: 30 }, format: {with: /\A[\w\s*]+\z/}
   # must have: name, description, be present, unique (title)
