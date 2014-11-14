@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :entries
   end
 
+  namespace :api do
+    resources :projects, only: [:show, :index, :create]
+  end
+
   # namespace :admin do
   #   resouces :posts
   # end
