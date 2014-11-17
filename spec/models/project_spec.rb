@@ -33,4 +33,31 @@ describe 'Project' do
       end
     end
   end
+
+  describe 'method' do
+    describe "total_hours" do
+      it "returns the amount of total hours" do
+        Entry.create(hours: 1, minutes: 40, date: Date.today, project_id: project.id)
+        Entry.create(hours: 1, minutes: 40, date: Date.today, project_id: project.id)
+        expect(project.total_hours).to eq 3
+      end
+    end
+    context 'when the project has no entries' do
+      it 'return 0' do
+        expect(project.total_hours).to eq 0
+      end
+    end
+    describe 'self.last_created_projects' do
+     context 'when there are some projects' do
+       it 'returns the n last created projects' do
+         expect(Project.last_created_projects(1)).to eq [project]
+       end
+     end
+     context 'when there are no projects' do
+       it 'returns an empty array' do
+         expect(Project.last_created_projects(2)).to eq []
+       end
+     end
+   end
+  end
 end
